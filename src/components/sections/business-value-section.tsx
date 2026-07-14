@@ -1,0 +1,10 @@
+"use client";
+
+import { motion } from "motion/react";
+import { businessValues } from "@/data/business-value";
+
+const transition = { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const };
+
+export function BusinessValueSection() {
+  return <section className="bg-background-light text-text-primary-on-light"><div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-32"><motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.2}} transition={transition} className="border-b border-black/10 pb-12 lg:pb-16"><p className="text-[11px] font-medium tracking-[.16em] text-text-secondary-on-light">WHY WENYUAN PINXU</p><h2 className="mt-6 text-[clamp(2.25rem,4vw,4.25rem)] font-normal leading-[1.08] tracking-[-.055em]">为什么企业选择文远品序</h2><p className="mt-6 max-w-[600px] text-[15px] leading-7 text-text-secondary-on-light">我们不仅提供设计服务，也关注企业长期表达、协作效率与未来发展方向。</p></motion.div><div className="mt-10 grid gap-3 lg:mt-12 lg:grid-cols-3">{businessValues.map((value,index)=><motion.article key={value.number} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.18}} transition={{...transition,delay:index*.08}} className="group flex min-h-[260px] flex-col rounded-card border border-black/10 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-black/20 hover:shadow-[0_16px_36px_rgba(16,16,18,.07)] sm:p-7"><span className="text-sm text-text-tertiary-on-light">{value.number}</span><p className="mt-8 text-[10px] font-medium tracking-[.13em] text-text-secondary-on-light">{value.english}</p><h3 className="mt-3 text-[24px] font-medium tracking-[-.04em]">{value.title}</h3><p className="mt-3 text-[15px] leading-7 text-text-secondary-on-light">{value.description}</p><div className="mt-auto flex flex-wrap gap-2 pt-7">{value.keywords.map((keyword)=><span key={keyword} className="rounded-button border border-black/10 px-2.5 py-1 text-[9px] tracking-[.08em] text-text-tertiary-on-light">{keyword}</span>)}</div></motion.article>)}</div></div></section>;
+}

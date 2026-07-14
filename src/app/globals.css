@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand colors */
+  --wp-color-obsidian-black: #0a0a0b;
+  --wp-color-graphite: #151518;
+  --wp-color-soft-white: #f6f6f3;
+  --wp-color-signal-orange: #ff6b4a;
+  --wp-color-signal-violet: #7c3aed;
+  --wp-color-electric-pink: #f15a8c;
+
+  /* Background colors */
+  --wp-color-background: var(--wp-color-obsidian-black);
+  --wp-color-background-raised: var(--wp-color-graphite);
+  --wp-color-background-soft: #202025;
+  --wp-color-background-light: var(--wp-color-soft-white);
+  --wp-color-background-glass: rgba(255, 255, 255, 0.06);
+
+  /* Text colors for dark surfaces */
+  --wp-color-text-primary: #f7f7f5;
+  --wp-color-text-secondary: rgba(247, 247, 245, 0.68);
+  --wp-color-text-tertiary: rgba(247, 247, 245, 0.42);
+
+  /* Text colors for light surfaces */
+  --wp-color-text-primary-on-light: #101012;
+  --wp-color-text-secondary-on-light: rgba(16, 16, 18, 0.64);
+  --wp-color-text-tertiary-on-light: rgba(16, 16, 18, 0.42);
+
+  /* Shape */
+  --wp-radius-button: 999px;
+  --wp-radius-card: 24px;
+  --wp-radius-section: 32px;
+
+  /* Typography */
+  --wp-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+@theme inline {
+  --color-obsidian: var(--wp-color-obsidian-black);
+  --color-graphite: var(--wp-color-graphite);
+  --color-soft-white: var(--wp-color-soft-white);
+  --color-signal-orange: var(--wp-color-signal-orange);
+  --color-signal-violet: var(--wp-color-signal-violet);
+  --color-electric-pink: var(--wp-color-electric-pink);
+
+  --color-background: var(--wp-color-background);
+  --color-background-raised: var(--wp-color-background-raised);
+  --color-background-soft: var(--wp-color-background-soft);
+  --color-background-light: var(--wp-color-background-light);
+
+  --color-text-primary: var(--wp-color-text-primary);
+  --color-text-secondary: var(--wp-color-text-secondary);
+  --color-text-tertiary: var(--wp-color-text-tertiary);
+  --color-text-primary-on-light: var(--wp-color-text-primary-on-light);
+  --color-text-secondary-on-light: var(--wp-color-text-secondary-on-light);
+  --color-text-tertiary-on-light: var(--wp-color-text-tertiary-on-light);
+
+  --radius-button: var(--wp-radius-button);
+  --radius-card: var(--wp-radius-card);
+  --radius-section: var(--wp-radius-section);
+  --font-sans: var(--wp-font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--wp-color-background);
+  color-scheme: dark;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--wp-color-background);
+  color: var(--wp-color-text-primary);
+  font-family: var(--wp-font-sans);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--wp-color-signal-violet);
+  color: var(--wp-color-soft-white);
+}
