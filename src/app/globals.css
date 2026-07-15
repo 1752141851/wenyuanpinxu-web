@@ -32,7 +32,17 @@
   --wp-radius-section: 32px;
 
   /* Typography */
-  --wp-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --wp-font-latin: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;
+  --wp-font-chinese: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --wp-font-sans: var(--wp-font-latin), var(--wp-font-chinese);
+  --wp-tracking-heading-cn: 0.035em;
+  --wp-tracking-body: 0.02em;
+  --wp-tracking-label-en: 0.14em;
+  --wp-tracking-display-en: -0.025em;
+  --wp-leading-display: 1.14;
+  --wp-leading-section: 1.3;
+  --wp-leading-card-title: 1.32;
+  --wp-leading-body: 1.8;
 }
 
 @theme inline {
@@ -61,6 +71,42 @@
   --font-sans: var(--wp-font-sans);
 }
 
+@layer utilities {
+  .wp-type-display {
+    font-family: var(--wp-font-sans);
+    letter-spacing: var(--wp-tracking-heading-cn);
+    line-height: var(--wp-leading-display);
+  }
+
+  .wp-type-section {
+    font-family: var(--wp-font-sans);
+    letter-spacing: var(--wp-tracking-heading-cn);
+    line-height: var(--wp-leading-section);
+  }
+
+  .wp-type-card-title {
+    font-family: var(--wp-font-sans);
+    letter-spacing: 0.02em;
+    line-height: var(--wp-leading-card-title);
+  }
+
+  .wp-type-body {
+    letter-spacing: var(--wp-tracking-body);
+    line-height: var(--wp-leading-body);
+  }
+
+  .wp-type-label {
+    font-family: var(--wp-font-latin);
+    letter-spacing: var(--wp-tracking-label-en);
+    line-height: 1.4;
+  }
+
+  .wp-type-english-display {
+    font-family: var(--wp-font-latin);
+    letter-spacing: var(--wp-tracking-display-en);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -80,6 +126,32 @@ body {
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--wp-font-sans);
+  letter-spacing: var(--wp-tracking-heading-cn) !important;
+}
+
+h1 {
+  line-height: var(--wp-leading-display) !important;
+}
+
+h2 {
+  line-height: var(--wp-leading-section) !important;
+}
+
+h3,
+h4 {
+  line-height: var(--wp-leading-card-title) !important;
+}
+
+p:not([class*="tracking-"]) {
+  letter-spacing: var(--wp-tracking-body);
+  line-height: var(--wp-leading-body);
 }
 
 button,

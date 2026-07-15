@@ -100,7 +100,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.18, ease: enterEase }}
-                className="text-balance text-[clamp(3rem,5.1vw,5.1rem)] font-medium leading-[1.06] tracking-[-0.065em] lg:whitespace-nowrap lg:leading-[1.03]"
+                className="wp-type-display text-balance text-[clamp(3rem,5.1vw,5.1rem)] font-medium lg:whitespace-nowrap"
               >
                 以设计提升企业价值
               </motion.h1>
@@ -108,7 +108,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: enterEase }}
-                className="mt-3 text-balance text-[clamp(2.45rem,4.3vw,4.25rem)] font-light leading-[1.12] tracking-[-0.055em] text-text-secondary lg:mt-2 lg:whitespace-nowrap lg:leading-[1.06]"
+                className="wp-type-section mt-3 text-balance text-[clamp(2.45rem,4.3vw,4.25rem)] font-light text-text-secondary lg:mt-2 lg:whitespace-nowrap"
               >
                 以 <span className="bg-[linear-gradient(110deg,#ff6b4a,#f15a8c,#a78bfa)] bg-clip-text text-transparent">AI</span> 探索增长可能
               </motion.h2>
@@ -118,7 +118,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45, ease: enterEase }}
-              className="mt-7 max-w-[520px] text-pretty text-[15px] leading-7 text-text-secondary sm:text-base"
+              className="wp-type-body mt-7 max-w-[520px] text-pretty text-[15px] text-text-secondary sm:text-base"
             >
               文远品序专注企业品牌视觉建设，并探索 AI 在内容生产、设计协作与企业服务中的创新应用。
             </motion.p>
@@ -154,7 +154,7 @@ export function HeroSection() {
           <div className="flex flex-wrap gap-x-7 gap-y-3">
             {capabilityTags.map((tag) => (
               <span key={tag.english} className="flex min-w-[132px] flex-col gap-1 border-l border-white/20 pl-3">
-                <span className="text-[10px] font-medium tracking-[0.1em] text-text-secondary">{tag.english}</span>
+                <span className="wp-type-label text-[10px] font-medium text-text-secondary">{tag.english}</span>
                 <span className="text-[11px] tracking-normal text-text-tertiary">{tag.chinese}</span>
               </span>
             ))}
